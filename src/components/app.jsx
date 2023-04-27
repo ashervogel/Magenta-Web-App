@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { BrowserRouter, Routes, Route, NavLink, useParams } from 'react-router-dom';
+import Counter from './counter';
+import Controls from './controls';
 
 const About = (props) => {
     return <div> All there is to know about me </div>;
@@ -38,7 +40,13 @@ const App = (props) => {
         <div>
           <Nav />
             <Routes>
-                <Route path="/" element={<Welcome />} />
+                <Route path="/" element={
+                  <div>
+                    <Welcome />
+                    <Counter />
+                    <Controls />
+                  </div>
+                } />
                 <Route path="/about" element={<About />} />
                 <Route path="/test/:id" element={<Test />} />
                 <Route path="*" element={<FallBack />} />
