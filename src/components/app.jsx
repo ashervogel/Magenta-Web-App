@@ -3,13 +3,18 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, NavLink, useParams } from 'react-router-dom';
 import Counter from './counter';
 import Controls from './controls';
-
-const About = (props) => {
-    return <div> All there is to know about me </div>;
-};
+import MusicVAEPlayer from './musicVAE_player';
 
 const Welcome = (props) => {
-    return <div>Welcome</div>;
+  return <div> Welcome to the Magenta GUI web app!</div>
+}
+
+const MusicVAEPage = (props) => {
+    return <div><MusicVAEPlayer /></div>;
+};
+
+const MusicRNNPage = (props) => {
+    return <div>Welcome to Music RNN page</div>;
 };
 
 const Nav = (props) => {
@@ -17,18 +22,17 @@ const Nav = (props) => {
       <nav>
         <ul>
             <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="/test/id1">test id1</NavLink></li>
-            <li><NavLink to="/test/id2">test id2</NavLink></li>
+            <li><NavLink to="/musicVAE">Music VAE</NavLink></li>
+            <li><NavLink to="/musicRNN">Music RNN</NavLink></li>
         </ul>
       </nav>
     );
 };
 
-const Test = (props) => {
-    const { id } = useParams();
-    return <div> ID: {id} </div>;
-};
+// const Test = (props) => {
+//     const { id } = useParams();
+//     return <div> ID: {id} </div>;
+// };
 
 const FallBack = (props) => {
     return <div>URL Not Found</div>;
@@ -40,15 +44,9 @@ const App = (props) => {
         <div>
           <Nav />
             <Routes>
-                <Route path="/" element={
-                  <div>
-                    <Welcome />
-                    <Counter />
-                    <Controls />
-                  </div>
-                } />
-                <Route path="/about" element={<About />} />
-                <Route path="/test/:id" element={<Test />} />
+                <Route path="/" element={<Welcome />} />
+                <Route path="/musicVAE" element={<MusicVAEPage />} />
+                <Route path="/musicRNN" element={<MusicRNNPage />} />
                 <Route path="*" element={<FallBack />} />
             </Routes>
         </div>
