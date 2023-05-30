@@ -13,11 +13,14 @@ This web app is currently only available to run locally. To use it, follow these
 
 ## Credits
 
-1. !(Matt Keating's MidiMe Web App)[https://git.dartmouth.edu/music-and-ai/code/-/blob/a2116d4dd595f4a7d0f8effe6e3e27d7d89b2ef1/projects23W/MattKeating_MidiMeMusicVAE/Magenta.html]
+1. ![Matt Keating's MidiMe Web App](https://git.dartmouth.edu/music-and-ai/code/-/blob/a2116d4dd595f4a7d0f8effe6e3e27d7d89b2ef1/projects23W/MattKeating_MidiMeMusicVAE/Magenta.html)
 2. Training Data: 
-  Jon Gillick, Adam Roberts, Jesse Engel, Douglas Eck, and David Bamman.
-  "Learning to Groove with Inverse Sequence Transformations."
+<p>
+  Jon Gillick, Adam Roberts, Jesse Engel, Douglas Eck, and David Bamman. <br>
+  "Learning to Groove with Inverse Sequence Transformations." <br>
     International Conference on Machine Learning (ICML), 2019.
+</p>
+3. ![Magenta Music](https://magenta.github.io/magenta-js/music/)
 
 ## Issues
 
