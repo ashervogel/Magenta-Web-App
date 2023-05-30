@@ -5,7 +5,7 @@ import MusicVAEPlayer from './musicVAE_player';
 import DrumsRNNPlayer from './drumsRNN_player';
 
 const Welcome = (props) => {
-  return <div> Welcome to the Magenta GUI web app!</div>
+  return <h1> Welcome to the Magenta GUI web app!</h1>
 }
 
 const MusicVAEPage = (props) => {
@@ -19,10 +19,10 @@ const MusicRNNPage = (props) => {
 const Nav = (props) => {
     return (
       <nav>
-        <ul>
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/musicVAE">Music VAE</NavLink></li>
-            <li><NavLink to="/musicRNN">Music RNN</NavLink></li>
+        <ul id='nav-bar'>
+            <li className='nav-item'><NavLink to="/">Home</NavLink></li>
+            <li className='nav-item'><NavLink to="/musicVAE">Music VAE</NavLink></li>
+            <li className='nav-item'><NavLink to="/musicRNN">Music RNN</NavLink></li>
         </ul>
       </nav>
     );

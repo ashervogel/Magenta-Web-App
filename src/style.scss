@@ -20,13 +20,27 @@ body, html {
     color: pink;
   }
 
+ul#nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+li.nav-item {
+    width: 200px;
+    margin-right: 50px;
+    list-style-type: none;
+    text-align: center;
+}
+
 .model-selector-div {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
 }
 
-#build-model-error-message, #generate-sample-error-message, #play-sample-error-message, #download-sample-error-message {
+#build-model-error-message, #generate-sample-error-message, #play-sample-error-message, #download-sample-error-message, #no-style-error-message, #issue-with-model-error-message {
     color: red;
     display: none;
     margin: 0;
@@ -48,7 +62,7 @@ body, html {
     margin-left: 50px;
 }
 
-#drumsrnn {
+.webpage {
     display: flex;
     flex-direction: column;
     padding: 20px;

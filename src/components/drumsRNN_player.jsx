@@ -127,7 +127,7 @@ function DrumsRNNPlayer(props) {
   }
 
   return (
-    <div id='drumsrnn'>
+    <div className='webpage'>
       <h1>Neural Drum Beat Engine</h1>
 
       <div className='generation-step'>
