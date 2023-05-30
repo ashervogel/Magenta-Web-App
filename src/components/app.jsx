@@ -22,7 +22,7 @@ const Nav = (props) => {
         <ul id='nav-bar'>
             <li className='nav-item'><NavLink to="/">Home</NavLink></li>
             <li className='nav-item'><NavLink to="/musicVAE">Music VAE</NavLink></li>
-            <li className='nav-item'><NavLink to="/musicRNN">Music RNN</NavLink></li>
+            <li className='nav-item'><NavLink to="/musicRNN">Drums RNN</NavLink></li>
         </ul>
       </nav>
     );

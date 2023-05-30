@@ -16,7 +16,7 @@ const styles = [
 
 function DrumsRNNPlayer(props) {
   const [player, setPlayer] = useState(null);
-  const [midiFilePath, setMidiFilePath] = useState("");
+  const [midiFilePath, setMidiFilePath] = useState('');
   const [modelBuilt, setModelBuilt] = useState(false);
   const [influence, setInfluence] = useState(null);
   const [sample, setSample] = useState(null);
