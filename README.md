@@ -35,10 +35,11 @@ Overall, I'm very proud of the work that I did. The web app is able to produce d
 </p>
 
 <p>
-I had to over come a number of hurdles just to get the app up and running. The documentation of the Magenta library is rather incomplete and oftentimes leaves you guessing as to how to use its objects and functions. One I had the models loaded into the React app, however, it was quite fun to play around with them and see what they are capable of.
+I had to over come a number of hurdles just to get the app up and running. The documentation of the Magenta library is rather incomplete and oftentimes leaves you guessing as to how to use its objects and functions. Once I had the models loaded into the React app, however, it was quite fun to play around with them and see what they are capable of.
 </p>
 
 ## Future Directions
 
+* Fix issues
 * Find samples of bass, snare, kick, and other drums sounds to make the Tone player sound better.
 * Add functionality to upload your own MIDI file rather than choosing between preselected influences.
