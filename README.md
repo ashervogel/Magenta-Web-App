@@ -19,7 +19,12 @@ This web app is currently only available to run locally. To use it, follow these
   "Learning to Groove with Inverse Sequence Transformations."
     International Conference on Machine Learning (ICML), 2019.
 
+## Issues
+
+* The MIDI files that the DrumsRNN page downloads don't work properly. I pulled this code from Matt Keating's `download()` function but couldn't figure out why it doesn't work with my code
+* Unable to deploy; Render, how go-to hosting platform, couldn't bundle the magenta packages even though they run locally with no problem.
+
 ## Future Directions
 
-* the MIDI files that the DrumsRNN page downloads don't work properly - this should be cleaned up
-* find samples of bass, snare, kick, and other drums sounds to make the Tone player sound better
+* Find samples of bass, snare, kick, and other drums sounds to make the Tone player sound better.
+* Upload your own MIDI file rather than choosing between preselected influences.
