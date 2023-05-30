@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { BrowserRouter, Routes, Route, NavLink, useParams } from 'react-router-dom';
-import Counter from './counter';
-import Controls from './controls';
 import MusicVAEPlayer from './musicVAE_player';
+import DrumsRNNPlayer from './drumsRNN_player';
 
 const Welcome = (props) => {
   return <div> Welcome to the Magenta GUI web app!</div>
@@ -14,7 +13,7 @@ const MusicVAEPage = (props) => {
 };
 
 const MusicRNNPage = (props) => {
-    return <div>Welcome to Music RNN page</div>;
+    return <div><DrumsRNNPlayer /></div>
 };
 
 const Nav = (props) => {

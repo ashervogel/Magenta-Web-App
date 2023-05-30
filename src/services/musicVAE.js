@@ -16,11 +16,12 @@ export function buildPlayer() {
   }
 }
 
-export function buildModel(model_name) {
-  const checkpoint = 'https://storage.googleapis.com/magentadata/js/checkpoints/music_vae/';
-  const model = new mvae.MusicVAE(checkpoint + model_name);
+export function buildModel(model_URL) {
+  console.log(model_URL);
+  const model = new mvae.MusicVAE(model_URL);
   if (model) {
     console.log("Music VAE model successfully built");
+    console.log(model);
     return model;
   } 
   else {
@@ -30,8 +31,6 @@ export function buildModel(model_name) {
 }
 
 export async function sampleMVAE(mvae, player) {
-  console.log(mvae);
-  console.log(player);
   mvae.sample(1).then(
     (samps) => {player.start(samps[0]); console.log(samps[0].notes)}
     ).catch(error => {
@@ -41,10 +40,10 @@ export async function sampleMVAE(mvae, player) {
 }
 
 export async function startProgram(model) {
-  console.log(model);
   try {
     await model.initialize();
     await Tone.start();
+    console.log(model);
   } catch(error) {
     console.log(`Error starting music VAE program: ${error}`);
     throw new Error(`Error starting music VAE program: ${error}`);
