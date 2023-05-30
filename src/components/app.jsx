@@ -5,7 +5,7 @@ import MusicVAEPlayer from './musicVAE_player';
 import DrumsRNNPlayer from './drumsRNN_player';
 
 const Welcome = (props) => {
-  return <h1> Welcome to the Magenta GUI web app!</h1>
+  return <div className='webpage'><h1> Welcome to the Magenta GUI web app!</h1></div>;
 }
 
 const MusicVAEPage = (props) => {
