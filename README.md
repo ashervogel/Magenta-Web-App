@@ -11,6 +11,14 @@ This web app is currently only available to run locally. To use it, follow these
 2. install dependencies: `npm install`
 3. run locally: `npm run dev`
 
+## Credits
+
+1. !(Matt Keating's MidiMe Web App)[https://git.dartmouth.edu/music-and-ai/code/-/blob/a2116d4dd595f4a7d0f8effe6e3e27d7d89b2ef1/projects23W/MattKeating_MidiMeMusicVAE/Magenta.html]
+2. Training Data: 
+  Jon Gillick, Adam Roberts, Jesse Engel, Douglas Eck, and David Bamman.
+  "Learning to Groove with Inverse Sequence Transformations."
+    International Conference on Machine Learning (ICML), 2019.
+
 ## Future Directions
 
 * the MIDI files that the DrumsRNN page downloads don't work properly - this should be cleaned up
