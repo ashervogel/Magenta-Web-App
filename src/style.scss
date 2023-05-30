@@ -33,3 +33,63 @@ body, html {
     margin: 0;
     padding: 5px;
 }
+
+.step-and-check-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#style-picker-check, #build-model-check, #generation-check {
+    visibility: hidden;
+    margin-left: 50px;
+}
+
+#parameters-check {
+    margin-left: 50px;
+}
+
+#drumsrnn {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+// #style-options {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
+// }
+
+// input {
+//     visibility: hidden;
+// }
+
+// .style-option {
+//     background-color: turquoise;
+//     width: 15%;
+//     height: 100px;
+// }
+
+// .style-option:hover {
+//     -webkit-filter: brightness(85%);
+//     -webkit-transition: all 0.5s ease;
+//     -moz-transition: all 0.5s ease;
+//     -o-transition: all 0.5s ease;
+//     -ms-transition: all 0.5s ease;
+//     transition: all 0.5s ease;
+// }
+
+// .style-option:checked{
+//     background-color: black !important;
+//   }
+
+
+// // .style-option>input:checked {
+// //     background-color: black;
+// // }
+
+
+// label {
+//     align-self: center;
+// }

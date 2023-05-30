@@ -31,8 +31,11 @@ function DrumsRNNPlayer(props) {
   function handleStyleChange(event) {
     setMidiFilePath(event.target.value);
     setModelBuilt(false);
+    document.getElementById('build-model-check').style.visibility = 'hidden';
     setInfluence(null);
     setSample(null);
+    document.getElementById('generation-check').style.visibility = 'hidden';
+    document.getElementById('style-picker-check').style.visibility = 'visible';
   }
 
   async function convertMidiFileToQuantizedNoteSequence(midiFilePath) {
@@ -55,6 +58,7 @@ function DrumsRNNPlayer(props) {
       convertMidiFileToQuantizedNoteSequence(midiFilePath).then((seq) => setInfluence(seq));
       await startProgram();
       setModelBuilt(true);
+      document.getElementById('build-model-check').style.visibility = 'visible';
     } catch (error) {
       throw new Error(error);
     }
@@ -68,6 +72,7 @@ function DrumsRNNPlayer(props) {
       }
       document.getElementById('generate-sample-error-message').style.display = 'none';
       setSample(await generatePattern(influence, sampleLength, temperature));
+      document.getElementById('generation-check').style.visibility = 'visible';
     } catch (error) {
       throw new Error(error);
     }
@@ -122,73 +127,94 @@ function DrumsRNNPlayer(props) {
   }
 
   return (
-    <div>
+    <div id='drumsrnn'>
       <h1>Neural Drum Beat Engine</h1>
 
-      <div>
+      <div className='generation-step'>
         <h2>Step 1: Pick a Style</h2>
-        {
-        Object.entries(styles).map(([index, value]) => {
-          return <div key={value.style}>
-            <input
-              type='radio'
-              value={value.filename}
-              name='style'
-              selected={midiFilePath === value.filename}
-              onChange={ handleStyleChange }
-            />
-            <label>{value.style}</label>
+        <div className='step-and-check-container'>
+          <div id='style-options'>
+            {
+            Object.entries(styles).map(([index, value]) => {
+              return <div key={value.style} className='style-option'>
+                <input
+                  type='radio'
+                  value={value.filename}
+                  name='style'
+                  selected={midiFilePath === value.filename}
+                  onChange={ handleStyleChange }
+                  className='style-checkbox'
+                />
+                <label className='style-label'>{value.style}</label>
+              </div>
+            })}
           </div>
-        })}
-      </div>
-
-      <div>
-        <h2>Step 2: Build Your Model</h2>
-        <button id='build-model-button' onClick={ onBuildModelClick }>Build Model</button>
-        <p id='build-model-error-message'>Please select a style first</p>
-      </div>
-      
-      <div>
-        <h2>Step 3: Adjust Parameters</h2>
-        <div id='parameter-sliders'>
-          <div id='sample-length-slider'>
-            <input
-              type="range"
-              min="4"
-              max="100"
-              step="4"
-              value={sampleLength}
-              onChange={handleSampleLengthChange}
-            />
-            <p>Sample Length: {sampleLength}</p>
-          </div>
-          <div id='temperature-slider'>
-            <input
-              type="range"
-              min="0"
-              max="2"
-              step="0.1"
-              value={temperature}
-              onChange={handleTemperatureChange}
-            />
-            <p>Temperature: {temperature}</p>
-          </div>
+          <img id='style-picker-check' src={'src/img/check.png'} />
         </div>
       </div>
 
-      <div>
-        <h2>Step 4: Generate a Sample</h2>
-        <button id='generate-sample-button' onClick={ generateSample } >Generate Sample</button>
-        <p id='generate-sample-error-message'>Please build your model first</p>
+      <div className='generation-step'>
+        <h2>Step 2: Build Your Model</h2>
+        <div className='step-and-check-container'>
+          <div>
+            <button id='build-model-button' onClick={ onBuildModelClick }>Build Model</button>
+            <p id='build-model-error-message'>Please select a style first</p>
+          </div>
+          <img id='build-model-check' src={'src/img/check.png'} />
+        </div>
+      </div>
+      
+      <div className='generation-step'>
+        <h2>Step 3: Adjust Parameters</h2>
+        <div className='step-and-check-container'>
+          <div>
+            <div id='parameter-sliders'>
+              <div id='sample-length-slider'>
+                <input
+                  type="range"
+                  min="4"
+                  max="100"
+                  step="4"
+                  value={sampleLength}
+                  onChange={handleSampleLengthChange}
+                />
+                <p>Sample Length: {sampleLength}</p>
+              </div>
+              <div id='temperature-slider'>
+                <input
+                  type="range"
+                  min="0"
+                  max="2"
+                  step="0.1"
+                  value={temperature}
+                  onChange={handleTemperatureChange}
+                />
+                <p>Temperature: {temperature}</p>
+              </div>
+            </div>
+          </div>
+          <img id='parameters-check' src={'src/img/check.png'} />
+        </div>
       </div>
 
-      <div>
+      <div className='generation-step'>
+        <h2>Step 4: Generate a Sample</h2>
+        <div className='step-and-check-container'>
+          <div>
+            <button id='generate-sample-button' onClick={ generateSample } >Generate Sample</button>
+            <p id='generate-sample-error-message'>Please build your model first</p>
+          </div>
+          <img id='generation-check' src={'src/img/check.png'} />
+        </div>
+      </div>
+
+      <div className='generation-step'>
         <h2>Step 5: Listen to Your Sample</h2>
         <button id='play-sample-button' onClick={ playSample }>Play Sample</button>
         <p id='play-sample-error-message'>Please generate a sample first</p>
       </div>
 
-      <div>
+      <div className='generation-step'>
         <h2>Step 6: Down MIDI File of Your Sample</h2>
         <button id='download-sample-button' onClick={ downloadSample }>Download Sample</button>
         <p id='download-sample-error-message'>Please generate a sample first</p>
