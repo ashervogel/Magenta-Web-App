@@ -173,7 +173,7 @@ function DrumsRNNPlayer(props) {
                 <input
                   type="range"
                   min="4"
-                  max="100"
+                  max="200"
                   step="4"
                   value={sampleLength}
                   onChange={handleSampleLengthChange}
